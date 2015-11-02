@@ -1,0 +1,13 @@
+def loadWords2():
+   try:
+       inFile = open(PATH_TO_FILE, 'r', 0)
+   #line of code to be added here#
+       print "The wordlist doesn't exist; using some fruits for now"
+       return ['apple', 'orange', 'pear', 'lime', 'lemon', 'grape', 'pineapple']
+   line = inFile.readline()
+   wordlist = string.split(line)
+   print "  ", len(wordlist), "words loaded."
+  return wordlist
+#except:, except IOError:, and except IOError as e: will all work. However, it is recommended you don't simply catch all exceptions (ie, write except:). When you're performing a task that might throw an error, you should only catch errors you expect the code within the try block to throw. That way, if some weird error you're not expecting to occur actually happens, you'll get a chance to see the error.
+#line 8 can be changed to:we have decided that we want to split our words up by commas instead of spaces.
+wordlist = string.split(line, ',') or wordlist = line.split(",") are both accepted
